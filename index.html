@@ -58,15 +58,11 @@
           ]
         };
 
-        var firstname, lastname, dob, contact, data;
-        for (var i = 0; i < obj.persons.length; i++) {
-          firstname = obj.persons[i].firstname;
-          lastname = obj.persons[i].lastname;
-          dob = obj.persons[i].dob;
-          contact = obj.persons[i].contact;
-          data = "<tr><td>" + (i+1) + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + dob + "</td><td>" + contact + "</td>";
-          $("#demo").append(data);
-        }
+        $.each(obj.persons,function(i, data){
+          json_data = "<tr><td>" + (i+1) + "</td><td>" + data.firstname + "</td><td>" + data.lastname + "</td><td>" + data.dob + "</td><td>" + data.contact + "</td>";
+          $("#demo").append(json_data);
+        });
+        
       });
     </script>
   </body>
