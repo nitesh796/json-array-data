@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JSON Assignment1</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="info">
+      <table border="1" cellpadding="10">
+        <thead>
+          <tr>
+            <th>SL No</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>DOB</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody id="demo">
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var obj;
+        obj = { "persons": [
+            {
+              "firstname": "Sagar",
+              "lastname": "Chand",
+              "dob": "22-07-1995",
+              "contact": "9876543210"
+            },
+            {
+              "firstname": "Ruchi",
+              "lastname": "Gautam",
+              "dob": "20-06-1971",
+              "contact": "8765432128"
+            },
+            {
+              "firstname": "Shweta",
+              "lastname": "Sharma",
+              "dob": "07-09-1965",
+              "contact": "8765432128"
+            },
+            {
+              "firstname": "Nidhi",
+              "lastname": "Sharma",
+              "dob": "15-08-1947",
+              "contact": "7654321218"
+            }
+          ]
+        };
+
+        var firstname, lastname, dob, contact, data;
+        for (var i = 0; i < obj.persons.length; i++) {
+          firstname = obj.persons[i].firstname;
+          lastname = obj.persons[i].lastname;
+          dob = obj.persons[i].dob;
+          contact = obj.persons[i].contact;
+          data = "<tr><td>" + (i+1) + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + dob + "</td><td>" + contact + "</td>";
+          $("#demo").append(data);
+        }
+      });
+    </script>
+  </body>
+</html>
